@@ -55,8 +55,6 @@ if (isset($scriptProperties['data'])) {
     $data = $modx->fromJson($scriptProperties['data']);
 }
 
-print_r($_REQUEST);
-
 $data['id'] = $modx->getOption('object_id', $scriptProperties, null);
 
 $parent = $modx->getOption('resource_id', $scriptProperties, false);

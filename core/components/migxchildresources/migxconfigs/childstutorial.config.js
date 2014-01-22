@@ -153,6 +153,7 @@
     "update_win_title":"",
     "win_id":"childstutorial",
     "maxRecords":"",
+    "addNewItemAt":"bottom",
     "multiple_formtabs":"",
     "extrahandlers":"this.handlePositionSelector||this.handleColumnSwitch",
     "packageName":"migxchildresources",
@@ -167,12 +168,20 @@
     "check_resid":1,
     "check_resid_TV":"",
     "join_alias":"",
+    "has_jointable":"yes",
     "getlistwhere":"",
-    "joins":"",
+    "joins":[
+      {
+        "alias":"CreatedBy"
+      }
+    ],
     "cmpmaincaption":"",
     "cmptabcaption":"",
     "cmptabdescription":"",
-    "cmptabcontroller":""
+    "cmptabcontroller":"",
+    "winbuttons":"",
+    "onsubmitsuccess":"",
+    "submitparams":""
   },
   "columns":[
     {
@@ -279,33 +288,6 @@
       "show_in_grid":1
     },
     {
-      "MIGX_id":8,
-      "header":"Stars",
-      "dataIndex":"rating_vote_total",
-      "width":20,
-      "renderer":"this.renderStars",
-      "sortable":"false",
-      "show_in_grid":1
-    },
-    {
-      "MIGX_id":9,
-      "header":"",
-      "dataIndex":"rating_vote_count",
-      "width":"",
-      "renderer":"",
-      "sortable":"false",
-      "show_in_grid":"0"
-    },
-    {
-      "MIGX_id":10,
-      "header":"Comments",
-      "dataIndex":"comments",
-      "width":10,
-      "renderer":"",
-      "sortable":"false",
-      "show_in_grid":1
-    },
-    {
       "MIGX_id":11,
       "header":"Menueindex",
       "dataIndex":"menuindex",
@@ -321,7 +303,7 @@
   "createdby":1,
   "createdon":"2012-07-29 19:12:13",
   "editedby":1,
-  "editedon":"2013-05-12 06:45:18",
+  "editedon":"2014-01-22 08:03:39",
   "deleted":0,
   "deletedon":"-1-11-30 00:00:00",
   "deletedby":0,

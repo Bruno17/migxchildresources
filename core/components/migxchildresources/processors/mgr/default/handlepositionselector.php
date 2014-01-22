@@ -5,12 +5,17 @@ include 'preparequery.php';
 $newpos_id = $modx->getOption('new_pos_id', $scriptProperties, 0);
 $col = $modx->getOption('col', $scriptProperties, '');
 $object_id = $modx->getOption('object_id', $scriptProperties, 0);
+$classname = 'modResource';
 
 $col = explode(':', $col);
 if (!empty($newpos_id) && !empty($object_id) && count($col) > 1) {
     $workingobject = $modx->getObject($classname,$object_id);
     $posfield = $col[0];
     $position = $col[1];
+
+    $parent = $workingobject->get('parent');
+    $c = $modx->newQuery($classname);
+    $c->where(array('deleted'=>0 , 'parent'=>$parent));
 
     if ($collection = $modx->getCollection($classname, $c)) {
         $curpos = 1;

@@ -12,6 +12,8 @@ $processTVList = !empty($processTVList) ? explode(',', $processTVList) : array()
 $processTVs = $modx->getOption('processTVs', $config, false);
 $commentsEnabled = $modx->getOption('commentsEnabled', $config, false);
 
+$checkCreator = $modx->getOption('checkCreator', $config, false);
+
 $classname = 'modResource';
 
 $joins = isset($config['joins']) && !empty($config['joins']) ? $modx->fromJson($config['joins']) : false;
@@ -99,6 +101,10 @@ if ($resource_id) {
 
 if (!empty($where)) {
     $c->where($modx->fromJson($where));
+}
+
+if ($checkCreator){
+    $c->where(array('createdby'=>$modx->user->get('id')));
 }
 
 $count = $modx->getCount($classname, $c);
